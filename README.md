@@ -1,11 +1,19 @@
-# Airbnb Light Project
-A minimalist Airbnb clone built with ❤️ by Alghisi Alessandro.
+# Airbnb Light
 
-## Setup
-- npm install
-- npm run dev
+Welcome to **Airbnb Light** — a minimalist version of Airbnb built for educational and portfolio purposes. 🏡✨
 
-## Features
-- Home listing
-- Booking
-- Authentication
+## 🚀 Technologies Used
+- React
+- Next.js
+- Tailwind CSS
+- TypeScript (optional if added later)
+- Prisma (for database, if backend exists)
+- Node.js / Express (if you extend the backend)
+
+## 📦 Setup Instructions
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/alexalghisi/airbnb-light.git
+   cd airbnb-light
