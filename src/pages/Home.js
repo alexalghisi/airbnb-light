@@ -1,36 +1,43 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom'; // ← Don't forget this
 import ListingCard from 'components/ListingCard';
-import { Link } from 'react-router-dom';
-import fakeListings from 'data/fakeListings'; // we’ll create this next
-
-
 import 'styles/home.css';
-
+import fakeListings from 'data/fakeListings';
 
 export default function Home() {
+    const [search, setSearch] = useState('');
+
+    const filteredListings = fakeListings.filter(listing =>
+        listing.title.toLowerCase().includes(search.toLowerCase()) ||
+        listing.location.toLowerCase().includes(search.toLowerCase())
+    );
+
     return (
         <div className="home">
             <header className="hero">
                 <h1>Welcome to Airbnb-Light</h1>
-                <input type="text" placeholder="Search destinations..." />
+                <input
+                    className="search-input"
+                    type="text"
+                    placeholder="Search destinations..."
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                />
+
             </header>
 
             <section className="listings">
-                {fakeListings.map(listing => (
+                {filteredListings.length === 0 && <p>No results found</p>}
+                {filteredListings.map(listing => (
                     <Link
                         key={listing.id}
                         to={`/listing/${listing.id}`}
                         style={{ textDecoration: 'none', color: 'inherit' }}
                     >
-                        <ListingCard
-                            title={listing.title}
-                            location={listing.location}
-                            price={listing.price}
-                            image={listing.image}
-                        />
+                        <ListingCard {...listing} />
                     </Link>
                 ))}
             </section>
-
         </div>
     );
 }
