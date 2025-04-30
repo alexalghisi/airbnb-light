@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import fakeListings from '../data/fakeListings'; // we’ll create this next
+import fakeListings from 'data/fakeListings'; // we’ll create this next
 
 export default function Listing() {
     const { id } = useParams();
