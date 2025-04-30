@@ -1,5 +1,6 @@
-import ListingCard from '../components/ListingCard';
-import '../styles/home.css';
+import ListingCard from 'components/ListingCard';
+import 'styles/home.css';
+
 
 const fakeListings = [
     {
