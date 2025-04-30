@@ -5,10 +5,12 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Listing from './pages/Listing';
 import Bookings from './pages/Bookings';
+import Navbar from 'layout/Navbar';
 
 function App() {
     return (
         <Router>
+            <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
