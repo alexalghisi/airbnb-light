@@ -8,23 +8,26 @@ const fakeListings = [
         title: 'Cozy Cabin in the Woods',
         location: 'Colorado, USA',
         price: 120,
-        image: 'https://source.unsplash.com/400x300/?cabin',
+        image: 'https://images.pexels.com/photos/271743/pexels-photo-271743.jpeg',  // working
     },
     {
         id: 2,
         title: 'Beach House Escape',
         location: 'Malibu, USA',
         price: 200,
-        image: 'https://source.unsplash.com/400x300/?beach-house',
+        image: 'https://roohome.com/wp-content/uploads/2017/02/Konstantin-Entalecev-cover.jpg',  // working
     },
     {
         id: 3,
         title: 'Modern Apartment',
         location: 'New York, USA',
         price: 150,
-        image: 'https://source.unsplash.com/400x300/?apartment',
+        image: ' https://images.pexels.com/photos/373548/pexels-photo-373548.jpeg',  // working
     },
 ];
+
+
+
 
 export default function Home() {
     return (
