@@ -7,7 +7,6 @@
     text-align: center;
     margin-bottom: 30px;
 }
-
 .hero input {
     width: 50%;
     padding: 10px;
@@ -21,4 +20,21 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+.search-input {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.listings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* makes cards nicely spaced */
+    margin-top: 30px;
 }
