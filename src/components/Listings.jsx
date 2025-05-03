@@ -1,7 +1,7 @@
 // src/components/Listings.js
 import React, { useEffect, useState } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
-import { db } from 'services/firebase';,,
+import { db } from 'services/firebase';
 
 const Listings = () => {
     const [listings, setListings] = useState([]);
