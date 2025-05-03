@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+
 import 'styles/navbar.css';
 
 export default function Navbar({ user, logout }) {
@@ -7,6 +8,7 @@ export default function Navbar({ user, logout }) {
             <h2 className="logo">🏡 Airbnb-Light</h2>
             <ul className="nav-links">
                 <li><Link to="/">Home</Link></li>
+                <Link to="/listings">All Listings</Link>
                 {user && <li><Link to="/bookings">Bookings</Link></li>}
                 {!user ? (
                     <li><Link to="/login">Login</Link></li>
