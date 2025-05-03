@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
-import { auth } from './firebase';
+import { auth } from './services/firebase';
 
 import Navbar from './layout/Navbar';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Listing from './pages/Listing';
 import Bookings from './pages/Bookings';
+import Listings from './components/Listings';
 
 function App() {
     const [user, setUser] = useState(null);
@@ -26,6 +27,7 @@ function App() {
             <Navbar user={user} logout={logout} />
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/listings" element={<Listings />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/listing/:id" element={<Listing />} />
                 <Route path="/bookings" element={<Bookings />} />
