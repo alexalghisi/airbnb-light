@@ -10,6 +10,8 @@ import Listing from './pages/Listing';
 import Bookings from './pages/Bookings';
 import Listings from './components/ListingsPage';
 
+import './index.css';
+
 function App() {
     const [user, setUser] = useState(null);
 
