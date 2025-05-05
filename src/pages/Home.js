@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom'; // ← Don't forget this
 import ListingCard from 'components/ListingCard';
-import 'styles/home.css';
 import fakeListings from 'data/fakeListings';
+
+import 'styles/home.css';
 
 export default function Home() {
     const [search, setSearch] = useState('');
