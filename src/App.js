@@ -8,7 +8,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Listing from './pages/Listing';
 import Bookings from './pages/Bookings';
-import Listings from './components/Listings';
+import Listings from './components/ListingsPage';
 
 function App() {
     const [user, setUser] = useState(null);
