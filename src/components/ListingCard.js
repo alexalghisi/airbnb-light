@@ -1,4 +1,3 @@
-// ListingCard.js or wherever your ListingsGrid is defined
 import React from "react";
 import ListingCard from "./ListingCard"; // optional, depends on your project
 
