@@ -1,12 +1,15 @@
-import 'styles/listingCard.css';
+// ListingCard.js or wherever your ListingsGrid is defined
+import React from "react";
+import ListingCard from "./ListingCard"; // optional, depends on your project
 
-export default function ListingCard({ title, location, price, image }) {
+const ListingsGrid = ({ listings = [] }) => {
     return (
-        <div className="listing-card">
-            <img src={image} alt={title} className="listing-image" />
-            <h3>{title}</h3>
-            <p>{location}</p>
-            <p>💰 ${price}/night</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {listings.map((listing) => (
+                <ListingCard key={listing.id} listing={listing} />
+            ))}
         </div>
     );
-}
+};
+
+export default ListingsGrid;
