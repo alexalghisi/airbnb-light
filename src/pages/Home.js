@@ -1,9 +1,7 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom'; // ← Don't forget this
+import { Link } from 'react-router-dom';
 import ListingCard from 'components/ListingCard';
 import fakeListings from 'data/fakeListings';
-
-import 'styles/home.css';
 
 export default function Home() {
     const [search, setSearch] = useState('');
@@ -14,31 +12,33 @@ export default function Home() {
     );
 
     return (
-        <div className="home">
-            <header className="hero">
-                <h1>Welcome to Airbnb-Light</h1>
+        <div className="max-w-7xl mx-auto px-4 py-8">
+            <header className="text-center mb-10">
+                <h1 className="text-4xl font-bold mb-4">Welcome to Airbnb-Light</h1>
                 <input
-                    className="search-input"
+                    className="w-full sm:w-96 border border-gray-300 rounded-xl px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
                     type="text"
                     placeholder="Search destinations..."
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                 />
-
             </header>
 
-            <section className="listings">
-                {filteredListings.length === 0 && <p>No results found</p>}
-                {filteredListings.map(listing => (
-                    <Link
-                        key={listing.id}
-                        to={`/listing/${listing.id}`}
-                        style={{ textDecoration: 'none', color: 'inherit' }}
-                    >
-                        <ListingCard {...listing} />
-                    </Link>
-                ))}
-            </section>
+            {filteredListings.length === 0 ? (
+                <p className="text-center text-gray-500 text-lg">No results found.</p>
+            ) : (
+                <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    {filteredListings.map(listing => (
+                        <Link
+                            key={listing.id}
+                            to={`/listing/${listing.id}`}
+                            className="text-inherit no-underline"
+                        >
+                            <ListingCard {...listing} />
+                        </Link>
+                    ))}
+                </section>
+            )}
         </div>
     );
 }
