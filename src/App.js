@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Listing from './pages/Listing';
 import Bookings from './pages/Bookings';
 import Listings from './components/ListingsPage';
+import ListingDetail from './pages/ListingDetail';
 
 import './index.css';
 
@@ -30,6 +31,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/listings" element={<Listings />} />
+                <Route path="/listings/:listingId" element={<ListingDetail />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/listing/:id" element={<Listing />} />
                 <Route path="/bookings" element={<Bookings />} />
