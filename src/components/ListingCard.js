@@ -1,23 +1,22 @@
 import React from "react";
-import ListingCard from "./ListingCard";
 
-const ListingsGrid = ({ listings = [] }) => {
+const ListingCard = ({ data }) => {
+    if (!data) return null;
+
     return (
-        <div className="max-w-7xl mx-auto px-6 py-10">
-            <h1 className="text-3xl font-bold mb-8">Locuințe disponibile</h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {listings.map((listing) => (
-                    <ListingCard key={listing.id} listing={listing} />
-                ))}
-            </div>
-
-            {listings.length === 0 && (
-                <p className="text-gray-500 mt-8 text-center">
-                    Nu există locuințe disponibile.
-                </p>
+        <div className="p-4 border rounded-xl shadow hover:shadow-lg transition cursor-pointer bg-white">
+            {data.imageUrl && (
+                <img
+                    src={data.imageUrl}
+                    alt={data.title}
+                    className="w-full h-48 object-cover rounded-md mb-3"
+                />
             )}
+            <h2 className="text-xl font-semibold">{data.title}</h2>
+            <p className="text-gray-600">{data.location}</p>
+            <p className="text-green-600 font-medium mt-2">${data.price} / night</p>
         </div>
     );
 };
 
-export default ListingsGrid;
+export default ListingCard;
