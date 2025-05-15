@@ -1,5 +1,5 @@
     import { useEffect, useState } from "react";
-    import { fetchListings } from "../utils/fetchListings";
+    import { fetchListings } from '@/utils/fetchListings';
     import { Link } from "react-router-dom";
 
     const ListingsPage = () => {
