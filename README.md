@@ -1,5 +1,6 @@
 # airbnb-light 
 
+
 A minimalist Airbnb clone built with React, Firebase Authentication, and Firestore. Fully responsive and styled using Tailwind CSS.
 
 ## Features
